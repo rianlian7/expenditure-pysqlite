@@ -29,14 +29,15 @@ def sql_inputData(conn, autoDate):
         pur_date = datetime.datetime.today().date()
     if autoDate == 0:
         print("Purchase Date: ")
-        pur_year = int(input("Year: "))
-        pur_month = int(input("Month: "))
-        pur_day = int(input("Day: "))
+        pur_year = int(input("Year (YYYY): "))
+        pur_month = int(input("Month (MM): "))
+        pur_day = int(input("Day (DD): "))
         pur_date = datetime.datetime(pur_year, pur_month, pur_day).date()
     pur_name = input("Name: ")
-    pur_cost = int(input("Cost(RM): "))
+    input_cost = float(input("Cost(RM): "))
     pur_category = input("Category: ")
     pur_req = input("Need/Want?: ")
+    pur_cost = float(format(input_cost))
     dictData = {
         "Purchase Date" : pur_date,
         "Name" : pur_name,
